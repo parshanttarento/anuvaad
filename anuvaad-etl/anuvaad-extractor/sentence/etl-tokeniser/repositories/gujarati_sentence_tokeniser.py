@@ -14,7 +14,7 @@ class AnuvaadGujaratiTokenizer(object):
     (\u09F0-\u09F9) represents character used in different lnguages other than bengali which use bengali script
     number range = ([\u09E6-\u09EF])
     additional consonants and vowels = ([\u09CE,\u09DC-\u09E1])
-    source for unicodes : https://unicode.org/charts/PDF/U0980.pdf
+    source for unicodes : https://unicode.org/charts/PDF/U0A80.pdf
     """
     _abbrevations_with_non_generalize_pattern = []
     _abbrevations_with_non_generalize = []
