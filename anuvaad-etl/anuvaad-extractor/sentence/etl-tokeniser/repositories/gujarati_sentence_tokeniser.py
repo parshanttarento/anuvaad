@@ -9,19 +9,19 @@ Utility tokenizer class for anuvaad project
 class AnuvaadGujaratiTokenizer(object):
     """
     Default abbrevations
-    incomplete char range = ([\u0980-\u0983,\u09BC-\u09CD,\u09D7,\u09E2-\u09E3, \u09FA-\u09FE])
-    complete char range = ([\u0985-\u09B9,\u09CE,\u09DC-\u09E1,\u09F0-\u09F9])    
+    incomplete char range = ([\u0A81-\u0A83,\u0ABC-\u0ACD,\u0AE2-\u0AE5, \u0AF0-\u0AF1])
+    complete char range = ([\u0A85-\u0AB9,\u0AD0-\u0AE1,\u0AF9])    
     (\u09F0-\u09F9) represents character used in different lnguages other than bengali which use bengali script
-    number range = ([\u09E6-\u09EF])
-    additional consonants and vowels = ([\u09CE,\u09DC-\u09E1])
+    number range = ([\u0AE6-\u0AEF])
+    arabic abbreviation symbol = ([\u0AFA-\u0AFF])
     source for unicodes : https://unicode.org/charts/PDF/U0A80.pdf
     """
     _abbrevations_with_non_generalize_pattern = []
     _abbrevations_with_non_generalize = []
-    _text_abbrevations_pattern_cic = r'((\s)(([\u0985-\u09B9,\u09CE,\u09DC-\u09E1,\u09F0-\u09F9])([\u0980-\u0983,\u09BC-\u09CD,\u09D7,\u09E2-\u09E3, \u09FA-\u09FE])?([\u0985-\u09B9,\u09CE,\u09DC-\u09E1,\u09F0-\u09F9])?(\u002e)(\s)?){1,})'
-    _text_abbrevations_pattern_cci = r'((\s)(([\u0985-\u09B9,\u09CE,\u09DC-\u09E1,\u09F0-\u09F9])([\u0985-\u09B9,\u09CE,\u09DC-\u09E1,\u09F0-\u09F9])?([\u0980-\u0983,\u09BC-\u09CD,\u09D7,\u09E2-\u09E3, \u09FA-\u09FE])?(\u002e)(\s)?){1,})'
-    _text_colon_abbreviations_pattern = r'(([\u0985-\u09B9,\u09CE,\u09DC-\u09E1,\u09F0-\u09F9])([\u0980-\u0983,\u09BC-\u09CD,\u09D7,\u09E2-\u09E3, \u09FA-\u09FE])?[:](\s)?[\u0980-\u09FE|-])'
-    _text_abbrevations_without_space_pattern = r'(^(([\u0985-\u09B9,\u09CE,\u09DC-\u09E1,\u09F0-\u09F9])([\u0980-\u0983,\u09BC-\u09CD,\u09D7,\u09E2-\u09E3, \u09FA-\u09FE])?([\u0985-\u09B9,\u09CE,\u09DC-\u09E1,\u09F0-\u09F9])?([\u0980-\u0983,\u09BC-\u09CD,\u09D7,\u09E2-\u09E3, \u09FA-\u09FE])?(\u002e)(\s)?){1,})'
+    _text_abbrevations_pattern_cic = r'((\s)(([\u0A85-\u0AB9,\u0AD0-\u0AE1,\u0AF9])([\u0A81-\u0A83,\u0ABC-\u0ACD,\u0AE2-\u0AE5, \u0AF0-\u0AF1])?([\u0A85-\u0AB9,\u0AD0-\u0AE1,\u0AF9])?(\u002e)(\s)?){1,})'
+    _text_abbrevations_pattern_cci = r'((\s)(([\u0A85-\u0AB9,\u0AD0-\u0AE1,\u0AF9])([\u0A85-\u0AB9,\u0AD0-\u0AE1,\u0AF9])?([\u0A81-\u0A83,\u0ABC-\u0ACD,\u0AE2-\u0AE5, \u0AF0-\u0AF1])?(\u002e)(\s)?){1,})'
+    _text_colon_abbreviations_pattern = r'(([\u0A85-\u0AB9,\u0AD0-\u0AE1,\u0AF9])([\u0A81-\u0A83,\u0ABC-\u0ACD,\u0AE2-\u0AE5, \u0AF0-\u0AF1])?[:](\s)?[\u0A81-\u0AFF|-])'
+    _text_abbrevations_without_space_pattern = r'(^(([\u0A85-\u0AB9,\u0AD0-\u0AE1,\u0AF9])([\u0A81-\u0A83,\u0ABC-\u0ACD,\u0AE2-\u0AE5, \u0AF0-\u0AF1])?([\u0A85-\u0AB9,\u0AD0-\u0AE1,\u0AF9])?([\u0A81-\u0A83,\u0ABC-\u0ACD,\u0AE2-\u0AE5, \u0AF0-\u0AF1])?(\u002e)(\s)?){1,})'
     _text_abbrevations_cic = []
     _text_abbrevations_cci = []
     _text_colon_abbreviations = []
