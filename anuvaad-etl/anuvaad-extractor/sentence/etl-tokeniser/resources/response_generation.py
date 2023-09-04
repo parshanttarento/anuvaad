@@ -40,6 +40,8 @@ class Response(object):
                         error_validator.check_language(in_locale)
                         if in_file_type == "txt":
                             input_file_data = file_ops.read_txt_file(input_filename)
+                            log_info(f"Paragraph as input: {input_file_data}",input_file_data)
+
                             error_validator.file_encoding_error(input_file_data)
                             output_filename = tokenisation.tokenisation_response(input_file_data, in_locale, i)
                         elif in_file_type == "json":
